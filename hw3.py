@@ -8,12 +8,13 @@
 # jan, march, may, july, august, oct, dec - 31
 #apr, june, sep, nov - 30
 #feb 28 ry 29 ly
+
 Leapyear = False
 
 while True:
     yearinp = input("To find the day of the week for a date, enter in MM/DD/YYYY format!")
     date = yearinp.split("/")
-    if len(date) != 3 or not date[0].isdigit() or not date[1].isdigit() or not date[2].isdigit():
+    if len(date) != 3 or not date[0].isdigit() or not date[1].isdigit() or not date[2].isdigit() or len(date[2]) != 4:
         print("Invalid date format!:(")
         continue
     else:
@@ -25,13 +26,13 @@ while True:
                 continue
             elif month <= 12 and month >= 1:
                 if month in [1,3,5,7,8,10,12]:
-                    if day > 31 or day < 0:
+                    if day > 31 or day < 1:
                         print("Invalid day, this month has 31 days!")
                         continue
                     else:
                         break
                 elif month in [4,6,9,11]:
-                    if day > 30 or day < 0:
+                    if day > 30 or day < 1:
                         print("Invalid day, this month has 30 days!")
                         continue
                     else:
@@ -65,6 +66,7 @@ def weekday(month,day,year):
     var2 = year/100       
     output = (day + ((13*(month + 1))/5) + var1 + (var1/4) + var2 - (2*var2))%7
     return output
+#I couldn't understand how to find the day of the week based off of just what january was, so I just based it off of the equation instead, sorry D:
 
 if weekday(month,day,year) < 1:
     date = 0
