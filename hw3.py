@@ -2,7 +2,7 @@
 #Lab Section 16
 #11/04/24
 #Sources, Help given to/received from:
-#N/A
+#I got some help fixing my While loop from my brother after writing it as well as figuring out formatting my weekday function
 
 
 # jan, march, may, july, august, oct, dec - 31
